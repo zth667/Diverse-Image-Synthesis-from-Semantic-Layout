@@ -1,8 +1,7 @@
 # Photographic Image Synthesis with Cascaded Refinement Networks
 
-This is a Tensorflow implementation of cascaded refinement networks to synthesize photographic images from semantic layouts.
+This is a Tensorflow implementation of Diverse Image Synthesis from Semantic Layouts using IMLE.
 
-<img src="https://zth667.github.io/img/diverse18.gif"/>
 
 ## Setup
 
