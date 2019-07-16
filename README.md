@@ -7,39 +7,35 @@ This is a Tensorflow implementation of cascaded refinement networks to synthesiz
 ## Setup
 
 ### Requirement
+Required python version: Python 2.7
+
 Required python libraries: Tensorflow (>=1.0) + Scipy + Numpy + Pillow.
 
 Tested in Ubuntu + Intel i7 CPU + Nvidia Titan X (Pascal) with Cuda (>=8.0) and CuDNN (>=5.0). CPU mode should also work with minor changes.
 
 ### Quick Start (Testing)
 1. Clone this repository.
-2. Download the pretrained models from Google Drive by running "python download_models.py". It takes several minutes to download all the models.
-3. Run "python demo_512p.py" or "python demo_1024p.py" (requires large GPU memory) to synthesize images.
-4. The synthesized images are saved in "result_512p/final" or "result_1024p/final".
+2. Download the VGG19 pretrained model by running "python download_models.py".
+3. Download the pretrained model from [here](https://drive.google.com/open?id=1zQzeEGB715jufm0-9MbzbWswTvdiTzyr) and extract at the root directory
+3. Run "test.py" to synthesize images.
+4. The synthesized images are saved in "gta_demo/result/"
 
 ### Training
-To train a model at 256p resolution, please set "is_training=True" and change the file paths for training and test sets accordingly in "demo_256p.py". Then run "demo_256p.py".
 
-To train a model at 512p resolution, we fine-tune the pretrained model at 256p using "demo_512p.py". Also change "is_training=True" and file paths accordingly.
+#### Dataset
+You can download the pre-processed dataset from [here](https://drive.google.com/open?id=1e63Hl6I9ToE0VNiyUgEXDXMUd17DQvtQ) or you can download it from the official [website](https://download.visinf.tu-darmstadt.de/data/from_games/) and run "python preprocess.py" to process the images.
 
-To train a model at 1024p resolution, we fine-tune the pretrained model at 512p using "demo_1024p.py". Also change "is_training=True" and file paths accordingly.
+#### Pretraining
+We train our model based on the CRN pretrained model. The pre-processed model (extra channels are added) can be downloaded from [here](https://drive.google.com/open?id=1Sbjzs_0CeDIrTUIn4uE98izY0vroY84V). We will release the pre-processing script soon.
 
-## Video
-https://youtu.be/0fhUJT21-bs
+#### Rarity estimation
+Once you have downloaded the dataset, you can generate the rarity mask (for loss rebalancing) and rarity bins (for dataset rebalancing) by running "python gen_dataset_weight.py" or you can download the pre-generated ones from [here](https://drive.google.com/open?id=1MFEVGevOOcGytkMYiYakHAt6BssAuQaO)
 
-## Citation
-If you use our code for research, please cite our paper:
-
-Qifeng Chen and Vladlen Koltun. Photographic Image Synthesis with Cascaded Refinement Networks. In ICCV 2017.
-
-## Amazon Turk Scripts
-The scripts are put in the folder "mturk_scripts".
-
-## Todo List
-1. Add the code and models for the GTA dataset.
+#### Run
+Run "python train.py" to start training
 
 ## Question
-If you have any question or request about the code and data, please email me at chenqifeng22@gmail.com. If you need the pretrained model on NYU, please send an email to me.
+If you have any question or request about the code and data, please email me at bryanzhang97@gmail.com.
 
 ## License
 MIT License
