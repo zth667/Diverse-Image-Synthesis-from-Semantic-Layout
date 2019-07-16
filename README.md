@@ -2,7 +2,7 @@
 
 This is a Tensorflow implementation of cascaded refinement networks to synthesize photographic images from semantic layouts.
 
-<img src="https://people.eecs.berkeley.edu/~ke.li/projects/imle/scene_layouts/vids/diverse18_large.gif"/>
+<img src="https://zth667.github.io/img/diverse18.gif"/>
 
 ## Setup
 
