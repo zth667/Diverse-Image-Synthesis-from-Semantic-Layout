@@ -112,7 +112,10 @@ with tf.variable_scope(tf.get_variable_scope()):
     t_vars=tf.trainable_variables()
     lr=tf.placeholder(tf.float32)
 G_opt=tf.train.AdamOptimizer(learning_rate=lr).minimize(G_loss,var_list=[var for var in t_vars if var.name.startswith('g_')])
-saver=tf.train.Saver(max_to_keep=1000)
+'''
+Please remove the 'var_list' argument in the next line if you have noise encoder parameters available in the loaded model (which is not the case for the model generated using 'preprocess_crn_model.py') 
+'''
+saver=tf.train.Saver(max_to_keep=1000,var_list=[var for var in t_vars if not var.name.startswith('g_noise')])
 sess.run(tf.global_variables_initializer())
 '''
   
