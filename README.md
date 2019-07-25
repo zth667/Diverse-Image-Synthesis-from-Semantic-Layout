@@ -1,4 +1,4 @@
-<img src='diverse18.gif' align="right" width=360>
+<img src='diverse18.gif' align="right" width=300>
 
 <br><br><br>
 
