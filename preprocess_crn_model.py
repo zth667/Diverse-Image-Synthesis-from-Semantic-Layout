@@ -45,7 +45,10 @@ sess=tf.Session()
 sp=256 #input resolution is 256x512
 num_noise = 10
 is_training=False
-pre_root = "~/PhotographicImageSynthesis/result_GTA"
+'''
+Change the root to where the CRN pre-trained model is saved
+'''
+pre_root = "../PhotographicImageSynthesis/result_GTA"
 with tf.variable_scope(tf.get_variable_scope()):
     label=tf.placeholder(tf.float32,[None,None,None,20])
     real_image=tf.placeholder(tf.float32,[None,None,None,3])
