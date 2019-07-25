@@ -1,6 +1,6 @@
-<img src='https://zth667.github.io/img/diverse18.gif' align="right" width=360>
+<img src='diverse18.gif' align="right" width=360>
 
-<br><br><br><br>
+<br><br><br>
 
 # Diverse Image Synthesis from Semantic Layouts using IMLE
 ### [Project](https://people.eecs.berkeley.edu/~ke.li/projects/imle/scene_layouts/) | [Paper](https://arxiv.org/pdf/1811.12373.pdf) <br>
