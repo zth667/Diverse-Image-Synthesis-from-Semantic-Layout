@@ -1,4 +1,4 @@
-# Photographic Image Synthesis with Cascaded Refinement Networks
+# Diverse Image Synthesis from Semantic Layouts using IMLE
 
 This is a Tensorflow implementation of Diverse Image Synthesis from Semantic Layouts using IMLE.
 
