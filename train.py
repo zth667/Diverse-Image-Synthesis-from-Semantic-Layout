@@ -170,25 +170,28 @@ if __name__ == '__main__':
 
     #Start training
     for ind in range(reinit_point+11):
-        st=time.time()
-        stind = ind*K%12403
-        edind = stind+K
-        for i in range(stind,edind):
-            idx = np.searchsorted(rarity_bin[(i-stind)%objectnum],np.random.rand())+1
+
+        for i in range(K):
+            #Sample image based on rarity bin
+            idx = np.searchsorted(rarity_bin[(i)%objectnum],np.random.rand())+1
             semantic=helper.get_semantic_map(labelroot+"/%08d.png"%idx)#test label
             semantic=np.concatenate((semantic,np.expand_dims(1-np.sum(semantic,axis=3),axis=3)),axis=3)
-            label_images[i-stind]=semantic
-            input_images[i-stind]=np.float32(scipy.misc.imread(imageroot+"/%08d.png"%idx))#training image
-            loss_masks[i-stind]=rarity_mask[idx-1]
+            label_images[i]=semantic
+            input_images[i]=np.float32(scipy.misc.imread(imageroot+"/%08d.png"%idx))#training image
+            loss_masks[i]=rarity_mask[idx-1]
+            
             mindist = np.inf
+
+            #Nearest Neighbor search
             for j in range(nn_num):
-                semantic = label_images[i-stind]
+                semantic = label_images[i]
                 semantic=np.concatenate((semantic,np.random.randn(semantic.shape[0],semantic.shape[1],semantic.shape[2],num_noise)),axis=3)
-                G_current = sess.run(G_loss,feed_dict={label:semantic,real_image:[input_images[i-stind]],mask:loss_masks[i-stind]})
+                G_current = sess.run(G_loss,feed_dict={label:semantic,real_image:[input_images[i]],mask:loss_masks[i]})
                 if G_current<mindist:
                     mindist=G_current
-                    minlabels[i-stind]=semantic[0]
-        
+                    minlabels[i]=semantic[0]
+
+        #Do L steps of update
         for l in range(L):
             f=np.random.randint(K, size=batchsize)
             label_batch = minlabels[f]
@@ -196,7 +199,7 @@ if __name__ == '__main__':
             mask_batch = loss_masks[f][0]
             _,G_current,l0,l1,l2,l3,l4,l5=sess.run([G_opt,G_loss,p0,p1,p2,p3,p4,p5],feed_dict={label:label_batch,real_image:input_batch,lr:curr_lr,mask:mask_batch})
             
-            #Intermediate test
+            #Intermediate test every 1000 steps
             if(l%1000==999):
                 print("%d %d %.2f %.2f %.2f %.2f %.2f %.2f %.2f\n"%(ind,l,G_current,np.mean(l0),np.mean(l1),np.mean(l2),np.mean(l3),np.mean(l4),np.mean(l5)))
                 os.makedirs("gta_demo/%04d_%06d"%(ind,l))
