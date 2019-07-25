@@ -1,11 +1,10 @@
 <img src='diverse18.gif' align="right" width=250>
 
-<br><br>
 
-# Diverse Image Synthesis from Semantic Layouts using IMLE
+# Diverse Image Synthesis from Semantic Layouts via Conditional IMLE
 ### [Project](https://people.eecs.berkeley.edu/~ke.li/projects/imle/scene_layouts/) | [Paper](https://arxiv.org/pdf/1811.12373.pdf) <br>
 This is a Tensorflow implementation of our method to generate diverse images from semantic layouts. <br><br>
-[Diverse Image Synthesis from Semantic Layouts using IMLE](https://people.eecs.berkeley.edu/~ke.li/projects/imle/scene_layouts/)  
+[Diverse Image Synthesis from Semantic Layouts via Conditional IMLE](https://people.eecs.berkeley.edu/~ke.li/projects/imle/scene_layouts/)  
  [Tianhao Zhang](https://zth667.github.io/)<sup>\*</sup>, [Ke Li](https://people.eecs.berkeley.edu/~ke.li/)<sup>\*</sup>, [Jitendra Malik](https://people.eecs.berkeley.edu/~malik/)<br>
  In ICCV 2019.
 
@@ -42,5 +41,17 @@ Run "python train.py" to start training
 ## Question
 If you have any question or request about the code and data, please email me at bryanzhang97@gmail.com.
 
+## Citation
+
+If you find this useful for your research, please use the following.
+
+```
+@inproceedings{li2019diverse,
+  title={Diverse Image Synthesis from Semantic Layouts via Conditional IMLE},
+  author={Ke Li and Tianhao Zhang and Jitendra Malik},  
+  booktitle={Proceedings of the IEEE international conference on computer vision},
+  year={2019}
+}
+```
 ## License
 MIT License
