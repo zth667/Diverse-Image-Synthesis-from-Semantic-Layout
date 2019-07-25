@@ -1,7 +1,13 @@
+<img src='https://zth667.github.io/img/diverse18.gif' align="right" width=360>
+
+<br><br><br><br>
+
 # Diverse Image Synthesis from Semantic Layouts using IMLE
-
-This is a Tensorflow implementation of Diverse Image Synthesis from Semantic Layouts using IMLE.
-
+### [Project](https://people.eecs.berkeley.edu/~ke.li/projects/imle/scene_layouts/) | [Paper](https://arxiv.org/pdf/1811.12373.pdf) <br>
+This is a Tensorflow implementation of our method to generate diverse images from semantic layouts. <br><br>
+[Diverse Image Synthesis from Semantic Layouts using IMLE](https://people.eecs.berkeley.edu/~ke.li/projects/imle/scene_layouts/)  
+ [Tianhao Zhang](https://zth667.github.io/)<sup>\*</sup>, [Ke Li](https://people.eecs.berkeley.edu/~ke.li/)<sup>\*</sup>, [Jitendra Malik](https://people.eecs.berkeley.edu/~malik/)<br>
+ In ICCV 2019.
 
 ## Setup
 
