@@ -5,7 +5,8 @@
 ### [Project](https://people.eecs.berkeley.edu/~ke.li/projects/imle/scene_layouts/) | [Paper](https://arxiv.org/pdf/1811.12373.pdf) <br>
 This is a Tensorflow implementation of our method to generate diverse images from semantic layouts. <br><br>
 [Diverse Image Synthesis from Semantic Layouts via Conditional IMLE](https://people.eecs.berkeley.edu/~ke.li/projects/imle/scene_layouts/)  
- [Tianhao Zhang](https://zth667.github.io/)<sup>\*</sup>, [Ke Li](https://people.eecs.berkeley.edu/~ke.li/)<sup>\*</sup>, [Jitendra Malik](https://people.eecs.berkeley.edu/~malik/)<br>
+ [Ke Li](https://people.eecs.berkeley.edu/~ke.li/)<sup>\*</sup>, [Tianhao Zhang](https://zth667.github.io/)<sup>\*</sup>, [Jitendra Malik](https://people.eecs.berkeley.edu/~malik/)<br>
+ (* equal contribution, alphabetical order)<br>
  In ICCV 2019.
 
 ## Setup
@@ -53,5 +54,9 @@ If you find this useful for your research, please use the following.
   year={2019}
 }
 ```
+
+## Acknowledgments
+This code borrows heavily from [Photographic Image Synthesis with Cascaded Refinement Networks](https://github.com/CQFIO/PhotographicImageSynthesis).
+
 ## License
 MIT License
