@@ -21,20 +21,20 @@ Tested in Ubuntu + Intel i7 CPU + Nvidia Titan X (Pascal) with Cuda (>=8.0) and 
 ### Quick Start (Testing)
 1. Clone this repository.
 2. Download the VGG19 pretrained model by running "python download_models.py".
-3. Download the pretrained model from [here](https://drive.google.com/open?id=1zQzeEGB715jufm0-9MbzbWswTvdiTzyr) and extract at the root directory
+3. Download the pretrained model from [here](https://drive.google.com/file/d/1wO0MwWOM8kVOw-nlDlO1yizYa_PlVcO6/view?usp=sharing) and extract at the root directory
 3. Run "test.py" to synthesize images.
 4. The synthesized images are saved in "gta_demo/result/"
 
 ### Training
 
 #### Dataset
-You can download the pre-processed dataset from [here](https://drive.google.com/open?id=1e63Hl6I9ToE0VNiyUgEXDXMUd17DQvtQ) or you can download it from the official [website](https://download.visinf.tu-darmstadt.de/data/from_games/) and run "python preprocess.py" to process the images.
+You can download the pre-processed dataset from [here](https://drive.google.com/file/d/104WWj0ygWVNRg_KmuUW3EDu_ymEukz4U/view?usp=sharing) or you can download it from the official [website](https://download.visinf.tu-darmstadt.de/data/from_games/) and run "python preprocess.py" to process the images.
 
 #### Pretraining
-We train our model based on the CRN pretrained model. The pre-processed model (extra channels are added) can be downloaded from [here](https://drive.google.com/open?id=1Sbjzs_0CeDIrTUIn4uE98izY0vroY84V). You can also download the CRN pretrained model from their [project](https://github.com/CQFIO/PhotographicImageSynthesis) and then preprocess the model by running "python preprocess_crn_model.py".
+We train our model based on the CRN pretrained model. The pre-processed model (extra channels are added) can be downloaded from [here](https://drive.google.com/file/d/1mt7ZS4zyECrqcDwWjqryjPFdc0gsFcqs/view?usp=sharing). You can also download the CRN pretrained model from their [project](https://github.com/CQFIO/PhotographicImageSynthesis) and then preprocess the model by running "python preprocess_crn_model.py".
 
 #### Rarity estimation
-Once you have downloaded the dataset, you can generate the rarity mask (for loss rebalancing) and rarity bins (for dataset rebalancing) by running "python gen_dataset_weight.py" or you can download the pre-generated ones from [here](https://drive.google.com/open?id=1MFEVGevOOcGytkMYiYakHAt6BssAuQaO)
+Once you have downloaded the dataset, you can generate the rarity mask (for loss rebalancing) and rarity bins (for dataset rebalancing) by running "python gen_dataset_weight.py" or you can download the pre-generated ones from [here](https://drive.google.com/file/d/1qzkcOKxoVzg5UTFeCXzcvRPCpLAOQMfI/view?usp=sharing)
 
 #### Run
 Run "python train.py" to start training
